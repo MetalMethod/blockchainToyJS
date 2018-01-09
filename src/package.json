@@ -1,0 +1,18 @@
+{
+  "name": "blockchain-toy",
+  "version": "1.0.0",
+  "description": "A simple Blockchain implementation in modern javascript",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js",
+    "test": "test.js"
+  },
+  "keywords": [
+    "blockchain",
+    "typescript",
+    "javascript",
+    "ECMA6"
+  ],
+  "author": "Igor Busquets based on several web references",
+  "license": "ISC"
+}
