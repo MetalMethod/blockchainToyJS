@@ -2,6 +2,7 @@
 *   getLatestBlock() - returns the previous added block object
 *   addBlock() - add a new block to the chain
 *   printInfo() - show all blocks info
+*   this.difficulty - number of 'nounces' added to the hash to increase difficulty of proof-of-work
 */
 
 const Block = require('./block.js');
@@ -9,6 +10,7 @@ const Block = require('./block.js');
 class Blockchain{
     constructor(){
         this.chain = [this.createGenesisBlock()];
+        this.difficulty = 4; 
     }
 
     //generate the first block (Genesis) of the chain
@@ -24,7 +26,7 @@ class Blockchain{
     //add a new block to the chain
     addBlock(newBlock){
         newBlock.previousHash = this.getLatestBlock().hash;
-        newBlock.hash = newBlock.calculateHash();
+        newBlock.mineBlock(this.difficulty);
         this.chain.push(newBlock);
     }
 
