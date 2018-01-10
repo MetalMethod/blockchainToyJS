@@ -2,10 +2,10 @@
   "name": "blockchain-toy",
   "version": "1.0.0",
   "description": "A simple Blockchain implementation in modern javascript",
-  "main": "start.js",
+  "main": "src/start.js",
   "scripts": {
-    "start": "node start.js",
-    "test": "test.js"
+    "start": "node src/start.js",
+    "test": "node src/test.js"
   },
   "keywords": [
     "blockchain",

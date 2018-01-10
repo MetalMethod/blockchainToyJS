@@ -8,5 +8,4 @@ Based on the online references:
 
 *  NodeJS good practices https://www.codementor.io/mattgoldspink/nodejs-best-practices-du1086jja
 
-* Creating packages in  NodeJS
-http://nodesource.com/blog/your-first-nodejs-package/
+* Creating packages in  NodeJS http://nodesource.com/blog/your-first-nodejs-package/

@@ -11,7 +11,7 @@
 const SHA256 = require("crypto-js/sha256");
 
 class Block {
-    constructor(index, data, previousHash = '') {
+    constructor(index, data, previousHash) {
         this.index = index;
         this.previousHash = previousHash;
         this.timestamp = new Date().toUTCString();
@@ -44,7 +44,7 @@ class Block {
             this.nounce++;
             this.hash = this.calculateHash();
         }
-        console.log("Block mined. index: " + this.index + "\nhash: " + this.hash);
+        console.log("Block mined index: " + this.index + "\nhash: " + this.hash + "\n");
     }
 }
 
