@@ -19,5 +19,5 @@ blockchain.addBlock(block2);
 blockchain.printInfo();
 
 //check if the whole chain is valid
-console.log(blockchain.isChainValid());
+console.log("Is this blockchain valid?  " + blockchain.isChainValid());
 

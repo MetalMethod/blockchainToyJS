@@ -10,7 +10,7 @@ const Block = require('./block.js');
 class Blockchain{
     constructor(){
         this.chain = [this.createGenesisBlock()];
-        this.difficulty = 4; 
+        this.difficulty = 3; 
     }
 
     //generate the first block (Genesis) of the chain
