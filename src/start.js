@@ -9,12 +9,10 @@ var data = "Some data in string form"
 
 let blockchain = new Blockchain();
 
-blockchain.addBlock(data);
-blockchain.addBlock(data);
-blockchain.addBlock(data);
+for(let i = 0; i < 10 ; i++){
+    blockchain.addBlock(data);
+}
+    blockchain.printInfo();
 
-blockchain.printInfo();
-
-//console.log(blockchain.isChainValid());
 
 

@@ -39,13 +39,13 @@ class Block {
                     + "\n" + "hash: " + this.hash + spacer1);
     }
 
-    mineBlock(difficulty){
-        while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
-            this.nounce++;
-            this.hash = this.calculateHash();
-        }
-        console.log("New block succesfully mined.\nhash: " + this.hash + "\n");
-    }
+    // mineBlock(difficulty){
+    //     while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
+    //         this.nounce++;
+    //         this.hash = this.calculateHash();
+    //     }
+    //     console.log("New block succesfully mined.\nhash: " + this.hash + "\n");
+    // }
 }
 
 module.exports = Block;

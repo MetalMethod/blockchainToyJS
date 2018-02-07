@@ -10,7 +10,7 @@ const Block = require('./block.js');
 class Blockchain{
     constructor(){
         this.chain = [this.createGenesisBlock()];
-        this.difficulty = 3; 
+        this.difficulty = 4; 
     }
 
     //generate the first block (Genesis) of the chain
@@ -25,23 +25,21 @@ class Blockchain{
 
     //add a new block to the chain
     addBlock(data){
-        let newBlock = new Block(this.getLatestBlock().index++ , data, this.getLatestBlock().hash);
-        newBlock.mineBlock(this.difficulty, 
-            function(){
-                chain.push(newBlock);
-            }
-        );
+        let newBlock = new Block(this.getLatestBlock().index +1 , data, this.getLatestBlock().hash);
+        this.mineBlock(this.difficulty, newBlock);        
+        this.chain.push(newBlock);                 
     }
 
     //shows the blockchain elements
     printInfo(){
+            console.log("Blockchain length: " + this.chain.length + "\n");
             console.log(this.chain);
     }
 
     //check if the whole chain is valid
     isChainValid(){
         let currentBlock;
-        let  previousBlock;
+        let previousBlock;
 
         for (let i = 1; i <= this.length; i++){
             currentBlock = this.chain[i];
@@ -60,6 +58,17 @@ class Blockchain{
             }
         }
         return true;
+    }
+
+    //mine a new block
+    mineBlock(difficulty, block){
+        while(block.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
+            block.nounce++;
+            block.hash = block.calculateHash();
+        }
+        if(block.hash !== undefined){
+            console.log("New block succesfully mined.\nhash: " + block.hash + "\n");
+        }
     }
 }
 
