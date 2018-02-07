@@ -44,7 +44,7 @@ class Block {
             this.nounce++;
             this.hash = this.calculateHash();
         }
-        console.log("Block mined index: " + this.index + "\nhash: " + this.hash + "\n");
+        console.log("New block succesfully mined.\nhash: " + this.hash + "\n");
     }
 }
 

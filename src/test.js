@@ -7,13 +7,11 @@ let blockchain = new Blockchain();
 
 //add a block 
 var data1 = "Some data in string form"
-let block = new Block(1, data1, 'hash1');
-blockchain.addBlock(block);
+blockchain.addBlock(data1);
 
 //add another block 
 var data2 = "Some more data in string form"
-let block2 = new Block(2, data2, 'hash2');
-blockchain.addBlock(block2);
+blockchain.addBlock(data2);
 
 //show all the blocks
 blockchain.printInfo();

@@ -24,11 +24,13 @@ class Blockchain{
     }
 
     //add a new block to the chain
-    addBlock(newBlock){
-        newBlock.previousHash = this.getLatestBlock().hash;
-        newBlock.mineBlock(this.difficulty);
-        newBlock.index = this.getLatestBlock().index++;
-        this.chain.push(newBlock);
+    addBlock(data){
+        let newBlock = new Block(this.getLatestBlock().index++ , data, this.getLatestBlock().hash);
+        newBlock.mineBlock(this.difficulty, 
+            function(){
+                chain.push(newBlock);
+            }
+        );
     }
 
     //shows the blockchain elements
@@ -40,15 +42,22 @@ class Blockchain{
 
     //check if the whole chain is valid
     isChainValid(){
-        for (let i = 1; i < this.length; i++){
-            const currentBlock = this.chain[i];
-            const previousBlock = this.chain[i -1];
+        let currentBlock;
+        let  previousBlock;
+
+        for (let i = 1; i <= this.length; i++){
+            currentBlock = this.chain[i];
+            previousBlock = this.chain[i -1];
 
             if(currentBlock.hash !== currentBlock.calculateHash()){
                 return false;
             }
 
             if(currentBlock.previousHash !== previousBlock.hash){
+                return false;
+            }
+            
+            if(currentBlock.index === previousBlock.index){
                 return false;
             }
         }
