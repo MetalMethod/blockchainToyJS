@@ -32,8 +32,8 @@ class Block {
     }
 
     printInfo(){
-        var spacer1 = "\n####################################################################### \n";
-        var spacer2 = "\n----------------------------------------------------------------------- ";
+        var spacer1 = "\n###########################################\n";
+        var spacer2 = "\n------------------------------------------- ";
         console.log( spacer1 + "block index: " + this.index
                     + "\n" + "Added on: " + this.timestamp + spacer2 
                     + "\n" + "hash: " + this.hash + spacer1);
