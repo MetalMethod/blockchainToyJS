@@ -35,9 +35,7 @@ class Blockchain{
 
     //shows the blockchain elements
     printInfo(){
-        this.chain.forEach(element => {
-            element.printInfo();
-        });
+            console.log(this.chain);
     }
 
     //check if the whole chain is valid
